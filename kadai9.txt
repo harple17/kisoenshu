@@ -1,0 +1,28 @@
+【プログラムの説明】
+構造体rationalのメンバをint型のnum,denumとして定義。
+また、整数a,bの最大公約数を返す関数int gcd(int a,int b)を定義。
+構造はbが0のときはaを返し、それ以外のときは再帰的にgcd(b,a%b)とすればよい。ユークリッドの互除法である。
+・加法
+struct rational型の返り値を持つ関数。struct rational型の引数を二つとる(in1、in2)。
+struct rational型のoutを用意し、a/b+c/d=(ad+bc)/bdだから、このタイミングでint型変数GCDにad+bcとbdの最大公約数を保存。
+分母分子をGCDで割り、分母に負の数が来てるときは表示が汚いので分母*-1、分子*-1をする。
+outを返す。
+・減法
+struct rational型の返り値を持つ関数。struct rational型の引数を二つとる(in1、in2)。
+struct rational型のoutを用意し、a/b-c/d=(ad-bc)/bdだから、このタイミングでint型変数GCDにad-bcとbdの最大公約数を保存。
+分母分子をGCDで割り、分母に負の数が来てるときは表示が汚いので分母*-1、分子*-1をする。
+outを返す。
+・乗法
+struct rational型の返り値を持つ関数。struct rational型の引数を二つとる(in1、in2)。
+struct rational型のoutを用意し、(a/b)×(c/d)=ac/bdだから、このタイミングでint型変数GCDにacとbdの最大公約数を保存。
+分母分子をGCDで割り、分母に負の数が来てるときは表示が汚いので分母*-1、分子*-1をする。
+outを返す。
+・除法
+struct rational型の返り値を持つ関数。struct rational型の引数を二つとる(in1、in2)。
+struct rational型のoutを用意し、(a/b)÷(c/d)=ad/bcだから、このタイミングでint型変数GCDにadとbcの最大公約数を保存。
+分母分子をGCDで割り、分母に負の数が来てるときは表示が汚いので分母*-1、分子*-1をする。
+・main
+なお、分母が0の入力を受けた場合はもう一度入力させる。
+【感想】
+構造体の利点をわかりやすく理解できる課題だった。構造体とは直接関係ないがgcdの実装に再帰関数用いることができたのは成長だろうと感じた。
+構造体の導入により可能になることを調べてみることにする。
